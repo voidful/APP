@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SingSpark Support</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090b12;
+      --panel: rgba(255, 255, 255, 0.08);
+      --text: #f7f8ff;
+      --muted: #b8bdcc;
+      --accent: #32dacb;
+      --warm: #ffb94c;
+      --line: rgba(255, 255, 255, 0.14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(50, 218, 203, 0.22), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(255, 185, 76, 0.18), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+    .card, .tile {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 24px;
+      backdrop-filter: blur(24px);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+    .card { padding: clamp(24px, 5vw, 48px); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .tile { padding: 22px; }
+    h1, h2, h3 { line-height: 1.15; }
+    h1 { margin: 0 0 8px; font-size: clamp(34px, 6vw, 56px); }
+    h2 { margin: 40px 0 12px; font-size: 24px; }
+    h3 { margin: 0 0 8px; font-size: 18px; }
+    p, li { color: var(--muted); }
+    a { color: var(--accent); }
+    .meta { margin: 0 0 28px; color: var(--accent); font-weight: 700; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #03110f;
+      font-weight: 800;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h1>SingSpark Support</h1>
+      <p class="meta">Private singing practice, no account required.</p>
+      <p>Need help with SingSpark, purchases, recordings, latency calibration, or App Store review questions? Contact us by email and include your device model, iOS version, and a short description of what happened.</p>
+      <a class="button" href="mailto:support@eric-lam.com?subject=SingSpark%20Support">Email support@eric-lam.com</a>
+
+      <h2>Quick Help</h2>
+      <div class="grid">
+        <article class="tile">
+          <h3>Restore Pro</h3>
+          <p>Open SingSpark, go to Help & Privacy, then tap Restore Pro Purchase. Make sure you are using the Apple Account that originally bought the unlock.</p>
+        </article>
+        <article class="tile">
+          <h3>Bluetooth Latency</h3>
+          <p>Bluetooth earphones can add delay. Use the latency calibration game once for each headset; SingSpark remembers the route and applies the saved offset.</p>
+        </article>
+        <article class="tile">
+          <h3>External Music</h3>
+          <p>SingSpark can mix with music apps playing in the background. It does not read Spotify or Apple Music audio data; pitch analysis uses microphone input only.</p>
+        </article>
+        <article class="tile">
+          <h3>Recordings</h3>
+          <p>Recordings are local to your device. They leave the device only if you choose to export or share them through iOS sharing features.</p>
+        </article>
+      </div>
+
+      <h2>Privacy</h2>
+      <p>Read the full privacy policy: <a href="https://voidful.app/singspark/privacy">https://voidful.app/singspark/privacy</a></p>
+
+      <h2>中文支援</h2>
+      <p>如果你需要協助，請寄信到 <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>，並附上裝置型號、iOS 版本與遇到的問題。SingSpark 不需要帳號、不含廣告，錄音預設只保存在本機。</p>
+    </section>
+  </main>
+</body>
+</html>

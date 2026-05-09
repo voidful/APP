@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDFX Support</title>
+  <meta name="description" content="PDFX support page for macOS users.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0f1216;
+      --panel: rgba(255, 255, 255, 0.06);
+      --panel-strong: rgba(255, 255, 255, 0.09);
+      --text: #f4f7fb;
+      --muted: #aab4bf;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #4da3ff;
+      --ok: #38d074;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(55, 148, 180, 0.22), transparent 34rem),
+        radial-gradient(circle at 88% 2%, rgba(77, 163, 255, 0.16), transparent 30rem),
+        linear-gradient(145deg, #101318, #0a0c10 58%, #111820);
+    }
+
+    main {
+      width: min(980px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0;
+    }
+
+    header {
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    p + p {
+      margin-top: 12px;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 18px;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #071019;
+      font-weight: 800;
+    }
+
+    .status {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 16px;
+      padding: 8px 12px;
+      border: 1px solid rgba(56, 208, 116, 0.28);
+      border-radius: 999px;
+      background: rgba(56, 208, 116, 0.10);
+      color: #c9f7dc;
+      font-size: 14px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--ok);
+    }
+
+    footer {
+      margin-top: 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">PDFX</p>
+      <h1>Support</h1>
+      <p class="subtitle">Need help with PDFX for macOS? This page covers common setup and editing questions, plus a direct support contact.</p>
+      <div class="status"><span class="dot"></span> Local PDF editing utility for macOS</div>
+    </header>
+
+    <div class="grid">
+      <section class="card wide">
+        <h2>Contact Support</h2>
+        <p>For help, bug reports, App Store questions, or privacy requests, email us at <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>.</p>
+        <p>Please include your macOS version, PDFX version, and a short description of the issue. Do not send sensitive documents unless support specifically asks for a sample file.</p>
+        <a class="button" href="mailto:support@eric-lam.com?subject=PDFX%20Support">Email Support</a>
+      </section>
+
+      <section class="card">
+        <h2>Open And Save PDFs</h2>
+        <ul>
+          <li>Use Open PDF to choose a local PDF file.</li>
+          <li>Use Save to write edits back to the current file.</li>
+          <li>Use Save As to export a separate PDF copy.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Text, Signature, Images</h2>
+        <ul>
+          <li>Use Text to place editable text boxes on the page.</li>
+          <li>Use Sign to draw a signature or import one from iPhone/iPad when available.</li>
+          <li>Use Insert Image or Paste Image to place images.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Shapes And Selection</h2>
+        <ul>
+          <li>Use Shape to add rectangles, ellipses, lines, arrows, and other marks.</li>
+          <li>Select an object to move, resize, rotate, recolor, or delete it.</li>
+          <li>The Inspector opens when an object is selected and can be collapsed when not needed.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Reduce PDF Size</h2>
+        <p>Reduce PDF Size creates a smaller flattened PDF copy. This can reduce editability and text selection in exchange for a lighter file.</p>
+      </section>
+
+      <section class="card wide">
+        <h2>Privacy</h2>
+        <p>PDFX works with user-selected local files and does not require an account, analytics, ads, tracking, or cloud sync.</p>
+        <p>Read the <a href="privacy.html">PDFX Privacy Policy</a>.</p>
+      </section>
+    </div>
+
+    <footer>Copyright © 2026 PDFX. All rights reserved.</footer>
+  </main>
+</body>
+</html>

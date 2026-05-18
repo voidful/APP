@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASRxSTUDIO Support</title>
+  <meta name="description" content="Support page for ASRxSTUDIO, an offline-first Mac transcription and captioning app.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1118;
+      --panel: #151b22;
+      --panel-2: #1d242d;
+      --text: #edf2f7;
+      --muted: #aab4c0;
+      --line: #303945;
+      --accent: #48e384;
+      --blue: #5aa7ff;
+      --warning: #ffd166;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, "PingFang TC", "Noto Sans TC", sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 12% 0%, rgba(90, 167, 255, .24), transparent 32rem),
+        radial-gradient(circle at 88% 8%, rgba(72, 227, 132, .12), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      width: min(1040px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: 32px;
+      align-items: end;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-weight: 650;
+      letter-spacing: .01em;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(72, 227, 132, .8);
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(40px, 6vw, 66px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 26px;
+      line-height: 1.25;
+    }
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 19px;
+    }
+    p, li { color: var(--muted); font-size: 17px; }
+    a { color: #8dc4ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .lead {
+      max-width: 720px;
+      color: #d6dde6;
+      font-size: 20px;
+    }
+    .hero-card, .section, .contact {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(29, 36, 45, .94), rgba(21, 27, 34, .94));
+    }
+    .hero-card {
+      padding: 22px;
+    }
+    .hero-card strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      margin-top: 16px;
+      padding: 0 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #07110b;
+      font-weight: 750;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 26px;
+    }
+    .section {
+      padding: 24px;
+    }
+    .full {
+      grid-column: 1 / -1;
+    }
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .step {
+      position: relative;
+      padding: 14px 16px 14px 54px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .03);
+      color: var(--muted);
+    }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 14px;
+      left: 16px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(90, 167, 255, .2);
+      color: #cfe5ff;
+      display: grid;
+      place-items: center;
+      font-weight: 750;
+    }
+    .status-list {
+      list-style: none;
+      padding: 0;
+      margin: 14px 0 0;
+    }
+    .status-list li {
+      padding: 10px 0;
+      border-top: 1px solid var(--line);
+    }
+    .badge {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(90, 167, 255, .13);
+      color: #dcecff;
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .note {
+      border-left: 3px solid var(--warning);
+      padding-left: 14px;
+      color: #e8dcc0;
+    }
+    .contact {
+      margin-top: 18px;
+      padding: 24px;
+    }
+    code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, .08);
+      color: #dcecff;
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: .92em;
+    }
+    footer {
+      margin-top: 46px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 820px) {
+      header, .grid { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 28px, 1040px); padding-top: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <div class="brand"><span class="dot"></span><span>ASRxSTUDIO</span></div>
+        <h1>Support</h1>
+        <p class="lead">Help for ASRxSTUDIO, a native Mac app for offline file transcription, SRT/VTT subtitle export, and desktop Live Captions.</p>
+      </div>
+      <aside class="hero-card">
+        <strong>Need help?</strong>
+        <p>Email us with your app version, macOS version, Mac model, and a short description of what happened.</p>
+        <a class="cta" href="mailto:support@asrx.studio?subject=ASRxSTUDIO%20Support">support@asrx.studio</a>
+      </aside>
+    </header>
+
+    <section class="grid">
+      <div class="section full">
+        <h2>Quick Start</h2>
+        <div class="steps">
+          <div class="step">Open ASRxSTUDIO and drag an audio or video file into the queue.</div>
+          <div class="step">Click Transcribe. File transcription uses the bundled VibeVoice runtime on your Mac.</div>
+          <div class="step">Review speaker labels and timestamps, then export SRT, VTT, TXT, Markdown, JSON, or DOCX.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Requirements</h2>
+        <p>ASRxSTUDIO is built for Apple Silicon Macs.</p>
+        <span class="badge">macOS 14 or later</span>
+        <span class="badge">Apple Silicon</span>
+        <span class="badge">Microphone permission for Live Captions</span>
+        <span class="badge">Speech Recognition permission for Live Captions</span>
+        <p class="note">Long media files and bundled speech models can require significant disk space and memory. Keep enough free disk space before importing large video files.</p>
+      </div>
+
+      <div class="section">
+        <h2>Privacy</h2>
+        <p>Normal file transcription is processed locally. ASRX does not upload your audio, video, transcript, subtitle, glossary, or project data to ASRX servers during the standard file workflow.</p>
+        <p>Live Captions use Apple macOS Speech Recognition after you grant permission.</p>
+        <p><a href="https://asrx.studio/privacy">Read the Privacy Policy</a></p>
+      </div>
+
+      <div class="section full">
+        <h2>Troubleshooting</h2>
+        <h3>Live Captions do not hear speech</h3>
+        <ul class="status-list">
+          <li>Open System Settings → Privacy & Security → Microphone, then confirm ASRxSTUDIO is allowed.</li>
+          <li>Open System Settings → Privacy & Security → Speech Recognition, then confirm ASRxSTUDIO is allowed.</li>
+          <li>Open System Settings → Sound → Input and choose an active microphone, such as MacBook Microphone or your external input device.</li>
+          <li>Quit and reopen ASRxSTUDIO after changing microphone or speech permissions.</li>
+        </ul>
+
+        <h3>File transcription does not start</h3>
+        <ul class="status-list">
+          <li>Make sure the media file is stored locally and is not still downloading from iCloud Drive or another sync provider.</li>
+          <li>Try a shorter audio file to confirm the bundled runtime is working.</li>
+          <li>Check that your Mac has enough free disk space for temporary audio extraction and exported subtitle files.</li>
+        </ul>
+
+        <h3>SRT or VTT export looks wrong</h3>
+        <ul class="status-list">
+          <li>Open the transcript editor and check whether timestamps are monotonic and speaker edits were saved.</li>
+          <li>Use subtitle preview to inspect line wrapping before exporting again.</li>
+          <li>If a long file has drift, export a small section first and include the original duration when contacting support.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Supported Workflows</h2>
+        <ul>
+          <li>Audio and video import</li>
+          <li>Offline transcript generation</li>
+          <li>SRT and VTT subtitle export</li>
+          <li>TXT, Markdown, JSON, and DOCX export</li>
+          <li>Speaker label and timestamp editing</li>
+          <li>Traditional Chinese conversion and hotword-friendly workflows</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>What to Send Support</h2>
+        <ul>
+          <li>ASRxSTUDIO version, for example <code>0.1.0</code></li>
+          <li>macOS version</li>
+          <li>Mac model and memory size</li>
+          <li>Media duration and file type</li>
+          <li>A screenshot of the error message</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:support@asrx.studio">support@asrx.studio</a></p>
+      <p>Website: <a href="https://asrx.studio">https://asrx.studio</a></p>
+      <p>Privacy: <a href="https://asrx.studio/privacy">https://asrx.studio/privacy</a></p>
+    </section>
+
+    <footer>
+      <div>© 2026 ASRX. All rights reserved.</div>
+      <div>ASRxSTUDIO · Offline Mac transcription and captions</div>
+    </footer>
+  </main>
+</body>
+</html>

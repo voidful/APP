@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASRxSTUDIO Privacy Policy</title>
+  <meta name="description" content="ASRxSTUDIO privacy policy for offline Mac transcription and live captions.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0b1118;
+      --panel: #151b22;
+      --panel-2: #1d242d;
+      --text: #edf2f7;
+      --muted: #aab4c0;
+      --line: #303945;
+      --accent: #48e384;
+      --blue: #5aa7ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, "PingFang TC", "Noto Sans TC", sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(90, 167, 255, .22), transparent 32rem),
+        radial-gradient(circle at 82% 12%, rgba(72, 227, 132, .12), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+    }
+    .wrap {
+      width: min(960px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+    header {
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-weight: 650;
+      letter-spacing: .01em;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(72, 227, 132, .8);
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(38px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      margin: 38px 0 10px;
+      font-size: 24px;
+      line-height: 1.25;
+    }
+    p, li { color: var(--muted); font-size: 17px; }
+    a { color: #8dc4ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .lead {
+      max-width: 760px;
+      color: #d6dde6;
+      font-size: 20px;
+    }
+    .card {
+      margin-top: 28px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(29, 36, 45, .94), rgba(21, 27, 34, .94));
+    }
+    .pill {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(90, 167, 255, .13);
+      color: #dcecff;
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .mini {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .03);
+    }
+    .mini strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    footer {
+      margin-top: 46px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      .wrap { width: min(100% - 28px, 960px); padding-top: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div class="brand"><span class="dot"></span><span>ASRxSTUDIO</span></div>
+      <h1>Privacy Policy</h1>
+      <p class="lead">ASRxSTUDIO is designed as an offline-first Mac transcription and captioning app. This policy explains what stays on your Mac, when Apple system services are used, and how to contact us.</p>
+      <p>Last updated: May 18, 2026</p>
+    </header>
+
+    <section class="card">
+      <h2>Summary</h2>
+      <p>File transcription in ASRxSTUDIO runs locally with the bundled VibeVoice runtime. During normal file transcription workflows, ASRX does not upload your audio, video, transcript, subtitles, glossary terms, or project state to ASRX servers.</p>
+      <span class="pill">Offline file transcription</span>
+      <span class="pill">No advertising SDKs</span>
+      <span class="pill">No cross-app tracking</span>
+      <span class="pill">User-controlled exports</span>
+    </section>
+
+    <section>
+      <h2>Local File Processing</h2>
+      <p>Audio and video files imported into ASRxSTUDIO are processed on your Mac by the app's bundled transcription runtime. Users do not need to install Python, pip packages, command-line tools, or separate model dependencies for the packaged app workflow.</p>
+      <p>Generated transcripts and subtitles are stored locally. Exported SRT, VTT, TXT, Markdown, JSON, and DOCX files are written only to locations you choose.</p>
+    </section>
+
+    <section>
+      <h2>Live Captions and Apple Speech Recognition</h2>
+      <p>Live Captions use Apple's macOS Speech Recognition framework after you grant Microphone and Speech Recognition permissions. Apple's speech recognition behavior, availability, and privacy controls are governed by Apple's platform services and your macOS settings.</p>
+      <p>If you do not enable Live Captions or do not grant those permissions, ASRxSTUDIO can still process supported media files locally for transcription and subtitle export.</p>
+    </section>
+
+    <section>
+      <h2>Data We Do Not Collect</h2>
+      <div class="grid">
+        <div class="mini">
+          <strong>No transcript analytics</strong>
+          <p>ASRX does not collect the contents of your transcripts, subtitles, hotword lists, or imported media during normal use.</p>
+        </div>
+        <div class="mini">
+          <strong>No advertising tracking</strong>
+          <p>ASRxSTUDIO does not use third-party advertising SDKs and does not track users across apps or websites.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Files and App Data</h2>
+      <p>ASRxSTUDIO may store app settings, queue state, transcript edits, recent project references, and runtime state in your Mac's Application Support folder. This data remains on your Mac unless you choose to share it, export it, back it up, or sync it through services you control.</p>
+    </section>
+
+    <section>
+      <h2>Network Use</h2>
+      <p>Normal file transcription does not require an ASRX cloud transcription service. If ASRxSTUDIO is installed through the App Store, Apple may handle purchases, updates, receipts, diagnostics, and crash reports according to your Apple and macOS settings.</p>
+      <p>If future versions add optional license activation, update checks, crash reporting, or support uploads outside Apple's services, this policy and App Store privacy answers will be updated before release.</p>
+    </section>
+
+    <section>
+      <h2>Permissions</h2>
+      <ul>
+        <li>Microphone access: used only when you start Live Captions.</li>
+        <li>Speech Recognition access: used for Live Captions through Apple's macOS Speech Recognition framework.</li>
+        <li>File access: used for media files you import and export locations you select.</li>
+        <li>Screen or system-audio permission: used only if a future system-audio capture workflow is explicitly enabled by the user.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Support Emails</h2>
+      <p>If you contact support, we receive the email address and information you choose to include, such as app version, macOS version, screenshots, logs, or sample files. Please avoid sending confidential audio or transcripts unless we specifically ask for a minimal sample and you are comfortable sharing it.</p>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this policy as ASRxSTUDIO changes. The latest version will be posted on this page with a new update date.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about privacy or data handling can be sent to <a href="mailto:support@asrx.studio">support@asrx.studio</a>.</p>
+    </section>
+
+    <footer>
+      <div>© 2026 ASRX. All rights reserved.</div>
+      <div><a href="https://asrx.studio">asrx.studio</a> · <a href="https://asrx.studio/support">Support</a></div>
+    </footer>
+  </main>
+</body>
+</html>

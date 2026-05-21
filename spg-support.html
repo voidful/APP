@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>整理相簿 Support</title>
+  <meta name="description" content="整理相簿 PhotoSpaceGuard 的支援頁面。">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #07171d;
+      --panel: rgba(255, 255, 255, 0.08);
+      --text: #f3feff;
+      --muted: #b7cacc;
+      --line: rgba(133, 238, 222, 0.35);
+      --mint: #70e1d3;
+      --aqua: #30cdee;
+      --orange: #ed974d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(112, 225, 211, 0.22), transparent 36rem),
+        radial-gradient(circle at 84% 30%, rgba(48, 205, 238, 0.16), transparent 32rem),
+        linear-gradient(180deg, #09282d 0%, var(--bg) 74%);
+      color: var(--text);
+      line-height: 1.72;
+    }
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+    header {
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+    }
+    .eyebrow {
+      color: var(--mint);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin: 0 0 10px;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 6vw, 4.2rem);
+      line-height: 1.08;
+      margin: 0;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+      margin: 18px 0 0;
+    }
+    .cta {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: #072126;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    section {
+      margin-top: 22px;
+      padding: 28px 30px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      background: var(--panel);
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+    }
+    h3 {
+      margin: 20px 0 8px;
+      font-size: 1.12rem;
+      color: var(--mint);
+    }
+    p, ol, ul { margin: 0 0 14px; }
+    ol, ul { padding-left: 1.3rem; }
+    li { margin: 8px 0; }
+    a { color: var(--aqua); }
+    .warning { color: #ffd89a; }
+    footer {
+      color: var(--muted);
+      margin-top: 34px;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">PhotoSpaceGuard</p>
+      <h1>整理相簿 Support</h1>
+      <p class="subtitle">需要協助、回報問題或提出建議，請寄信給我們。</p>
+      <a class="cta" href="mailto:support@eric-lam.com">support@eric-lam.com</a>
+    </header>
+
+    <section>
+      <h2>快速開始</h2>
+      <ol>
+        <li>開啟整理相簿並授權照片圖庫。</li>
+        <li>在首頁按「開始快速檢查」或「重新掃描」。</li>
+        <li>右滑留下，左滑準備刪除。</li>
+        <li>檢查完成後，按「刪除選取項目」。</li>
+      </ol>
+      <p class="warning">提醒：App 不會自動刪除。只有你手動選擇並按下刪除時，才會送出系統刪除請求。</p>
+    </section>
+
+    <section>
+      <h2>常見問題</h2>
+
+      <h3>刪除後去哪裡了？</h3>
+      <p>刪除後的照片或影片會進入 Apple 照片 App 的「最近刪除」。你可以在系統保留期限內到照片 App 還原。</p>
+
+      <h3>App 會自動刪除照片嗎？</h3>
+      <p>不會。整理相簿只會提供建議，所有刪除都需要你在 App 前景畫面中手動選擇並按下刪除。</p>
+
+      <h3>App 會上傳照片或影片嗎？</h3>
+      <p>目前版本不會因掃描而上傳原始照片、影片、縮圖或音訊。分析預設在裝置本機完成。</p>
+
+      <h3>為什麼我看不到建議？</h3>
+      <p>如果圖庫較小、照片差異很大，或先前已把相似項目標記為留下，建議數量可能較少。你可以重新掃描，或匯入多張相似照片與短影片測試。</p>
+
+      <h3>掃描很多照片會很久嗎？</h3>
+      <p>大圖庫會採用分批掃描。首頁會顯示目前狀態，背景任務只會更新建議，不會刪除內容。</p>
+    </section>
+
+    <section>
+      <h2>回報問題時請提供</h2>
+      <ul>
+        <li>你的 iPhone 或 iPad 型號。</li>
+        <li>iOS / iPadOS 版本。</li>
+        <li>App 版本。</li>
+        <li>問題發生前你正在做的動作。</li>
+        <li>如果方便，附上畫面截圖。</li>
+      </ul>
+      <p>聯絡信箱：<a href="mailto:support@eric-lam.com">support@eric-lam.com</a></p>
+    </section>
+
+    <section>
+      <h2>隱私政策</h2>
+      <p>請查看 <a href="./privacy-policy.html">Privacy Policy</a> 了解整理相簿如何處理照片、影片與本機資料。</p>
+    </section>
+
+    <footer>
+      © 2026 PhotoSpaceGuard. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>

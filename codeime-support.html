@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CodeIME Support</title>
+  <meta name="description" content="Support page for CodeIME, an iOS developer keyboard for terminal commands, symbols, and SSH workflows.">
+  <style>
+    :root {
+      color-scheme: dark;
+      --page: #181612;
+      --surface: #211e1a;
+      --raised: #2c2721;
+      --border: #4e4539;
+      --text: #f4efe6;
+      --muted: #bdb19e;
+      --accent: #d97757;
+      --accent-soft: #4e342a;
+      --ink: #19140f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    main {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 72px;
+    }
+
+    header {
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 10px 0 14px;
+      font-size: clamp(2.25rem, 8vw, 4.5rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .intro {
+      max-width: 720px;
+      font-size: 1.08rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    section {
+      margin-top: 28px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+
+    ol,
+    ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq article {
+      padding: 16px;
+      border-radius: 8px;
+      background: var(--raised);
+    }
+
+    .faq p {
+      margin-bottom: 0;
+    }
+
+    .note {
+      padding: 16px;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      color: var(--text);
+    }
+
+    .note p {
+      margin: 0;
+      color: var(--text);
+    }
+
+    footer {
+      margin-top: 36px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 560px) {
+      main {
+        width: min(100% - 28px, 920px);
+        padding-top: 34px;
+      }
+
+      section {
+        padding: 18px;
+      }
+
+      .actions {
+        display: grid;
+      }
+
+      .button {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Support</div>
+      <h1>CodeIME</h1>
+      <p class="intro">CodeIME is an iOS developer keyboard for mobile SSH, shell commands, terminal navigation, and code symbols. This page covers setup, common questions, and how to contact support.</p>
+      <div class="actions">
+        <a class="button" href="mailto:support@eric-lam.com?subject=CodeIME%20Support">Email Support</a>
+        <a class="button secondary" href="./privacy.html">Privacy Policy</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Contact</h2>
+      <p>For help with CodeIME, email <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>.</p>
+      <p>Please include your iOS version, device model, CodeIME version, and a short description of what happened.</p>
+    </section>
+
+    <section>
+      <h2>Enable CodeIME</h2>
+      <ol>
+        <li>Install and open CodeIME.</li>
+        <li>Open Settings &gt; General &gt; Keyboard &gt; Keyboards.</li>
+        <li>Tap Add New Keyboard.</li>
+        <li>Select CodeIME.</li>
+        <li>Open any text field and use the globe key to switch to CodeIME.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Common Questions</h2>
+      <div class="faq">
+        <article>
+          <h3>Does CodeIME require Full Access?</h3>
+          <p>No. CodeIME does not require keyboard Full Access.</p>
+        </article>
+
+        <article>
+          <h3>Are my keystrokes or commands sent to a server?</h3>
+          <p>No. CodeIME does not collect, store, or transmit keystrokes, commands, predictions, or usage data. Command predictions are local and rule-based.</p>
+        </article>
+
+        <article>
+          <h3>How do terminal arrow keys work?</h3>
+          <p>CodeIME inserts common ANSI escape sequences for arrow keys. Terminal apps that accept those sequences can interpret them as navigation input.</p>
+        </article>
+
+        <article>
+          <h3>How do Ctrl and Alt work?</h3>
+          <p>Tap Ctrl or Alt to make the next key use that modifier. You can also hold Ctrl while tapping another key, such as C, to insert the matching control character.</p>
+        </article>
+
+        <article>
+          <h3>Why does a shortcut not work in every app?</h3>
+          <p>iOS third-party keyboards can insert text, control characters, and ANSI sequences where the target app accepts them. They cannot send true global hardware key events system-wide.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li>If CodeIME does not appear in the keyboard list, open CodeIME once, then check Settings again.</li>
+        <li>If the keyboard does not switch, try a different text field and use the globe key to cycle keyboards.</li>
+        <li>If terminal navigation does not respond, confirm the target app accepts ANSI escape sequences from software keyboards.</li>
+        <li>If the layout looks unusual after an iOS update, restart the device and contact support with a screenshot.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Privacy</h2>
+      <div class="note">
+        <p>CodeIME has no analytics, no ads, no tracking, no accounts, and no server-side prediction service.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>CodeIME Support. Contact: <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>.</p>
+    </footer>
+  </main>
+</body>
+</html>

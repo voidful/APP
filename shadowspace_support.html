@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://eric-lam.com/APP/shadowspace_support.html">
+  <title>ShadowSpace 支援</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #18202f;
+      --muted: #5f6b7c;
+      --border: #d9e0ea;
+      --accent: #2457d6;
+      --accent-soft: #e8efff;
+      --ok-soft: #e6f6ef;
+      --ok-text: #176647;
+      --shadow: 0 18px 45px rgba(24, 32, 47, 0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #11151d;
+        --panel: #181e29;
+        --text: #eef3fb;
+        --muted: #a7b2c2;
+        --border: #2a3342;
+        --accent: #8fb1ff;
+        --accent-soft: #1f2c49;
+        --ok-soft: #173226;
+        --ok-text: #8ee0ba;
+        --shadow: none;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
+      line-height: 1.7;
+    }
+
+    main {
+      width: min(980px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 5vw, 56px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .mark {
+      display: inline-grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .contact {
+      display: grid;
+      gap: 10px;
+      margin: 28px 0;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--ok-soft);
+      color: var(--ok-text);
+    }
+
+    .contact strong {
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 18px;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      margin: 18px 0 28px;
+    }
+
+    .item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+      background: var(--panel);
+    }
+
+    .item p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    code {
+      padding: 0.1em 0.35em;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: var(--accent-soft);
+    }
+
+    footer {
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="document">
+      <div class="brand"><span class="mark">S</span> ShadowSpace</div>
+      <h1>ShadowSpace 支援</h1>
+      <p class="subtitle">
+        需要協助安裝、匯入節點、訂閱更新、連線模式或 App Store 版本限制時，可以從這裡開始。
+      </p>
+
+      <section class="contact" aria-label="Support contact">
+        <strong>支援信箱</strong>
+        <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>
+        <span>來信時請附上 macOS 版本、ShadowSpace 版本、問題發生步驟，以及可安全分享的錯誤訊息。</span>
+      </section>
+
+      <h2>回報問題時請附上</h2>
+      <div class="grid">
+        <div class="item">
+          <h3>環境資訊</h3>
+          <p>macOS 版本、ShadowSpace 版本、使用的是 App Store 版或官網/GitHub 版。</p>
+        </div>
+        <div class="item">
+          <h3>重現步驟</h3>
+          <p>你點了哪些按鈕、匯入了哪一種格式、錯誤是在連線前還是連線後出現。</p>
+        </div>
+        <div class="item">
+          <h3>安全的日誌</h3>
+          <p>可以貼錯誤訊息，但請先遮蔽節點密碼、Token、訂閱網址與私密伺服器位址。</p>
+        </div>
+      </div>
+
+      <h2>常見問題</h2>
+
+      <h3>無法連線或連線後沒有流量</h3>
+      <ul>
+        <li>確認節點本身可用，並檢查帳號流量、到期日與伺服器狀態。</li>
+        <li>嘗試切換「規則」、「全域」或「直連」模式，看問題是否與分流規則有關。</li>
+        <li>如果使用系統代理模式，確認瀏覽器或 App 有使用系統代理。</li>
+        <li>如果使用 TUN/增強模式，請確認已授權管理員權限，並在問題排除後重新啟動連線。</li>
+      </ul>
+
+      <h3>匯入節點或訂閱失敗</h3>
+      <ul>
+        <li>ShadowSpace 支援常見節點分享連結與 base64 節點清單訂閱。</li>
+        <li>請確認剪貼簿內容完整，且訂閱網址可以在瀏覽器中正常開啟。</li>
+        <li>Clash YAML 專用訂閱可能需要供應商提供通用訂閱格式。</li>
+      </ul>
+
+      <h3>App Store 版和官網/GitHub 版有什麼不同？</h3>
+      <p>
+        App Store 版使用 Apple NetworkExtension 架構，適合需要沙盒化代理工具的使用者。
+        官網/GitHub 版是 Developer ID 公證版本，支援更完整的協議、sing-box 引擎、
+        系統代理與 TUN/增強模式。兩個版本都不需要 ShadowSpace 帳號。
+      </p>
+
+      <h3>如何重置 ShadowSpace 設定？</h3>
+      <p>
+        你可以先在 App 內刪除節點、訂閱與自訂規則。若需要完整清除，請刪除 App
+        以及 macOS 中 ShadowSpace 的本機資料目錄；刪除前請先備份仍需要的節點資訊。
+      </p>
+
+      <h3>如何保護節點與訂閱資訊？</h3>
+      <ul>
+        <li>不要在公開 Issue、論壇或截圖中貼出完整訂閱網址、節點密碼或 Token。</li>
+        <li>寄信求助時可以保留錯誤訊息，但先用 <code>***</code> 遮蔽敏感欄位。</li>
+        <li>如果懷疑訂閱網址外洩，請到你的服務供應商後台重設訂閱連結。</li>
+      </ul>
+
+      <h2>相關頁面</h2>
+      <ul>
+        <li>支援頁：<a href="https://eric-lam.com/APP/shadowspace_support.html">https://eric-lam.com/APP/shadowspace_support.html</a></li>
+        <li>隱私權政策：<a href="https://eric-lam.com/APP/shadowspace_privacy.html">https://eric-lam.com/APP/shadowspace_privacy.html</a></li>
+      </ul>
+
+      <footer>
+        ShadowSpace Support · Contact:
+        <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

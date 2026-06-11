@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://eric-lam.com/APP/shadowspace_privacy.html">
+  <title>ShadowSpace 隱私權政策</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --panel: #ffffff;
+      --text: #18202f;
+      --muted: #5f6b7c;
+      --border: #d9e0ea;
+      --accent: #2457d6;
+      --accent-soft: #e8efff;
+      --shadow: 0 18px 45px rgba(24, 32, 47, 0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #11151d;
+        --panel: #181e29;
+        --text: #eef3fb;
+        --muted: #a7b2c2;
+        --border: #2a3342;
+        --accent: #8fb1ff;
+        --accent-soft: #1f2c49;
+        --shadow: none;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
+      line-height: 1.7;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    .document {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 5vw, 56px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .mark {
+      display: inline-grid;
+      width: 32px;
+      height: 32px;
+      place-items: center;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .updated {
+      margin: 0 0 34px;
+      color: var(--muted);
+    }
+
+    h2 {
+      margin: 34px 0 10px;
+      font-size: 1.35rem;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 0 0 18px;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    .notice {
+      margin: 26px 0;
+      padding: 18px 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--accent-soft);
+    }
+
+    footer {
+      margin-top: 34px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <article class="document">
+      <div class="brand"><span class="mark">S</span> ShadowSpace</div>
+      <h1>隱私權政策</h1>
+      <p class="updated">最後更新：2026 年 6 月 12 日</p>
+
+      <p>
+        本隱私權政策說明 ShadowSpace 如何處理使用者資料。ShadowSpace 是一款 macOS
+        代理與透明代理工具，設計原則是讓設定留在你的裝置上，並避免收集不必要的個人資料。
+      </p>
+
+      <div class="notice">
+        ShadowSpace 不建立帳號、不投放廣告、不追蹤使用者，也不會把你的節點、訂閱網址、分流規則或連線紀錄上傳到 ShadowSpace 開發者營運的伺服器。
+      </div>
+
+      <h2>我們收集的資料</h2>
+      <p>ShadowSpace 開發者不主動收集可識別個人的資料，也不使用第三方分析或廣告追蹤工具。</p>
+      <ul>
+        <li>不需要註冊帳號。</li>
+        <li>不收集姓名、電話、通訊錄、照片或精確位置。</li>
+        <li>不追蹤你在其他 App 或網站中的活動。</li>
+        <li>不將節點憑證、訂閱網址、代理設定或分流規則傳送給 ShadowSpace 開發者。</li>
+      </ul>
+
+      <h2>儲存在你裝置上的資料</h2>
+      <p>為了提供代理功能，ShadowSpace 會在本機保存你主動輸入或匯入的設定，例如：</p>
+      <ul>
+        <li>代理節點、訂閱網址與節點群組。</li>
+        <li>分流模式、DNS 設定、自訂規則與偏好設定。</li>
+        <li>本機連線狀態、流量統計、延遲測試結果與 App 日誌。</li>
+      </ul>
+      <p>
+        這些資料保存在 macOS 的本機 App 資料目錄或 App Group 容器中，用於讓 App 與
+        NetworkExtension 或本機代理引擎正常運作。刪除 App 與其本機資料後，這些設定也會從你的裝置移除。
+      </p>
+
+      <h2>代理連線與第三方服務</h2>
+      <p>
+        ShadowSpace 是代理工具。當你啟用連線時，網路流量會依你的設定送往你選擇的代理節點、
+        訂閱服務、DNS 服務或網路服務供應商。這些第三方可能依其政策處理你的連線資料；
+        ShadowSpace 開發者無法控制第三方代理服務的資料處理方式。
+      </p>
+      <p>
+        若你使用官網或 GitHub 提供的 Developer ID 版本，App 可能會使用 sing-box
+        引擎、GeoIP/Geosite 規則檔或你提供的訂閱網址。若你使用 Mac App Store 版本，
+        App 會透過 Apple NetworkExtension 架構處理連線，並受 macOS 沙盒限制。
+      </p>
+
+      <h2>權限使用</h2>
+      <p>ShadowSpace 只會在功能需要時使用相關權限：</p>
+      <ul>
+        <li>網路代理或 VPN/NetworkExtension 權限：用於建立代理連線與套用分流規則。</li>
+        <li>系統代理設定或管理員授權：僅限 Developer ID 版本在啟用系統代理或 TUN/增強模式時使用。</li>
+        <li>剪貼簿匯入：只有在你選擇從剪貼簿匯入節點或訂閱時讀取。</li>
+      </ul>
+
+      <h2>資料分享</h2>
+      <p>
+        ShadowSpace 開發者不販售個人資料，也不與廣告商或資料仲介分享使用者資料。
+        如因法律要求、保護使用者安全或回應你的支援請求而需要處理資訊，我們只會在必要範圍內處理。
+      </p>
+
+      <h2>支援信件</h2>
+      <p>
+        當你寄信到
+        <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>
+        尋求支援時，我們會使用你提供的電子郵件地址與問題內容回覆你。請避免在信件中提供不必要的敏感資訊；若需要協助診斷連線問題，可先移除或遮蔽節點密碼、Token 與私密網址。
+      </p>
+
+      <h2>兒童隱私</h2>
+      <p>
+        ShadowSpace 並非針對 13 歲以下兒童設計。我們不會故意收集兒童的個人資料。
+      </p>
+
+      <h2>政策更新</h2>
+      <p>
+        若本政策有重大更新，會在此頁面公布新的版本與更新日期。最新版本會放在
+        <a href="https://eric-lam.com/APP/shadowspace_privacy.html">https://eric-lam.com/APP/shadowspace_privacy.html</a>。
+      </p>
+
+      <h2>聯絡我們</h2>
+      <p>
+        若你對本隱私權政策或 ShadowSpace 的資料處理方式有任何問題，請聯絡：
+        <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>。
+      </p>
+
+      <footer>
+        ShadowSpace Privacy Policy · Support:
+        <a href="https://eric-lam.com/APP/shadowspace_support.html">shadowspace_support.html</a>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>

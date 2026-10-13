@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daysgone 支援</title>
+  <meta name="description" content="Daysgone 支援頁：在本機找出同一人的照片，逐張確認後移到「已隱藏」。">
+  <style>
+    :root { color-scheme: light; --bg:#f7f6f0; --panel:#ffffff; --ink:#1f3836; --muted:#566663; --teal:#1f665c; --mist:#e0ede5; --line:#e4e2d8; --amber:#80520f; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Noto Sans TC","Helvetica Neue",Arial,sans-serif; line-height:1.7; background:var(--bg); color:var(--ink); }
+    .wrap { width:min(820px, calc(100% - 40px)); margin:0 auto; padding:56px 0 72px; }
+    .brand { display:inline-flex; align-items:center; gap:10px; color:var(--muted); font-weight:650; margin-bottom:18px; }
+    .dot { width:12px; height:12px; border-radius:50%; background:var(--teal); }
+    h1 { margin:0 0 8px; font-size:clamp(34px,6vw,52px); line-height:1.1; letter-spacing:-0.02em; }
+    .lead { font-size:19px; color:var(--muted); margin:0 0 28px; }
+    .meta { font-size:14px; color:var(--muted); }
+    section { background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:24px 26px; margin:18px 0; }
+    h2 { margin:0 0 10px; font-size:22px; }
+    h3 { margin:18px 0 6px; font-size:17px; }
+    p, li { color:var(--muted); font-size:16px; }
+    ul { padding-left:1.2em; }
+    a { color:var(--teal); font-weight:600; }
+    .note { background:var(--mist); border-radius:14px; padding:14px 16px; color:var(--ink); }
+    footer { margin-top:30px; font-size:14px; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>Daysgone</div>
+    <h1>Daysgone 支援</h1>
+    <p class="lead">在 iPhone 或 iPad 上找出同一個人的照片，逐張確認後移到照片 App 的「已隱藏」。所有辨識都在你的裝置上完成。</p>
+    <section>
+      <h2>聯絡我們</h2>
+      <p>問題、建議或錯誤回報，請寄信到 <a href="mailto:support@eric-lam.com">support@eric-lam.com</a>。請附上裝置型號、iOS 版本與 App 版本（可在 App 的「關於與隱私」查看），方便我們協助你。</p>
+    </section>
+    <section>
+      <h2>怎麼使用</h2>
+      <ul>
+        <li><strong>照片範圍：</strong>允許照片「讀取與寫入」權限。可選完整或部分照片。</li>
+        <li><strong>參考人臉：</strong>挑 2–6 張同一人、清楚且角度不同的照片；合照請點選要找的那張臉。</li>
+        <li><strong>掃描：</strong>App 在本機比對每張照片。可以切到其他 App，掃描會在背景繼續；鎖定螢幕時暫停，回來後自動續掃。</li>
+        <li><strong>審核與隱藏：</strong>越前面越像。新找到的照片預設已選取；不是本人的請按「不是」。確認清單後才會移到「已隱藏」。</li>
+      </ul>
+    </section>
+    <section>
+      <h2>常見問題</h2>
+      <h3>照片會被刪除嗎？</h3>
+      <p>不會。Daysgone 只把照片移到照片 App 的「已隱藏」相簿，不會刪除任何照片。</p>
+      <h3>怎麼取消隱藏？</h3>
+      <p>打開照片 App → 相簿 →「已隱藏」（可能需要 Face ID 解鎖）→ 選照片 →「取消隱藏」。iOS 會鎖定「已隱藏」相簿，因此 Daysgone 無法替你一鍵還原。詳見 <a href="https://support.apple.com/zh-tw/104987">Apple 官方說明</a>。</p>
+      <h3>為什麼有些照片沒有被找到？</h3>
+      <p>相似度不是身分保證。臉太小、側臉、遮擋、年代差異大的照片可能比對不到；換幾張更清楚、不同角度的參考照片再掃描通常會改善。只存在 iCloud、尚未下載到裝置的照片不會被分析，請先在照片 App 下載後再「增量掃描」。</p>
+      <h3>為什麼要我重新掃描？</h3>
+      <p>當照片權限或可存取的照片範圍改變時，App 會要求重新確認，避免隱藏到範圍外的照片。重新掃描只會分析新增或變更的照片。</p>
+      <h3>iCloud 照片會怎樣？</h3>
+      <p>若開啟 iCloud 照片，隱藏狀態會同步到你的其他裝置。若可存取的照片包含 iCloud 共享圖庫，隱藏後其他成員也會看不到。</p>
+      <h3>支援影片嗎？</h3>
+      <p>目前分析靜態照片與 Live Photo 的封面，不支援影片。</p>
+    </section>
+
+    <footer>Daysgone · voidful · <a href="daysgone_support.html">支援</a> · <a href="daysgone_privacy.html">隱私權政策</a></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DreamCue Support</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d0c1d;
+      --panel: rgba(255, 255, 255, 0.07);
+      --text: #f4f2ff;
+      --muted: #bdb8d6;
+      --accent: #c9b8ff;
+      --line: rgba(255, 255, 255, 0.13);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(140, 120, 255, 0.22), transparent 32rem),
+        radial-gradient(circle at bottom left, rgba(90, 160, 200, 0.14), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    main { width: min(920px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 72px; }
+    .card, .tile {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 24px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+    .card { padding: clamp(24px, 5vw, 48px); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 20px; }
+    .tile { padding: 22px; }
+    h1 { margin: 0 0 8px; font-size: clamp(34px, 6vw, 54px); line-height: 1.15; }
+    h2 { margin: 40px 0 10px; font-size: 24px; line-height: 1.2; }
+    h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.25; }
+    p, li { color: var(--muted); }
+    a { color: var(--accent); }
+    .meta { margin: 0 0 24px; color: var(--accent); font-weight: 700; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: 0 22px; margin-top: 8px;
+      border-radius: 999px; background: var(--accent); color: #17132e;
+      font-weight: 800; text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h1>DreamCue Support</h1>
+      <p class="meta">Lucid dream practice that puts sleep first.</p>
+      <p>Questions about practice, cues, Apple Watch, widgets, or your data? Email us and include your device model, iOS version, and what happened.</p>
+      <a class="button" href="mailto:support@eric-lam.com?subject=DreamCue%20Support">Email support@eric-lam.com</a>
+
+      <h2>Quick help</h2>
+      <div class="grid">
+        <article class="tile">
+          <h3>I don't hear the night cue</h3>
+          <p>On iPhone, late-night cues are notifications. Check that notifications for DreamCue are on, the ring/silent switch is not set to silent, and your Sleep Focus allows DreamCue. After changing sleep times, tap "Set cue reminders" on the Tonight screen again.</p>
+        </article>
+        <article class="tile">
+          <h3>The cue wakes me up</h3>
+          <p>Record it in the morning entry. DreamCue then lowers or pauses cues. You can also re-test the cue in Settings and choose "Too strong" or "Softer".</p>
+        </article>
+        <article class="tile">
+          <h3>Apple Watch</h3>
+          <p>Open DreamCue on iPhone once so the watch receives tonight's plan. Watch cues are gentle taps; wearing the watch snugly helps you feel them.</p>
+        </article>
+        <article class="tile">
+          <h3>Practice is paused</h3>
+          <p>If any item in the safety check applies, DreamCue uses journal-only mode to protect your sleep. You can still keep a dream journal. Change your answers in Settings if your situation changes.</p>
+        </article>
+        <article class="tile">
+          <h3>Apple Health</h3>
+          <p>Health access is optional and read-only. Without it, DreamCue estimates cue timing from your sleep times alone. Manage access in the Health app.</p>
+        </article>
+        <article class="tile">
+          <h3>Export or delete</h3>
+          <p>Settings &gt; Export &amp; delete lets you export JSON or CSV, or delete all local data. Your notes are not stored anywhere else.</p>
+        </article>
+      </div>
+
+      <h2>Please note</h2>
+      <p>DreamCue is a practice tool, not a medical device. It cannot detect dreams or REM sleep and does not guarantee lucid dreams. If nightmares, poor sleep, or confusion between dreams and waking life bother you, stop practicing and talk to a health professional.</p>
+
+      <h2>Privacy</h2>
+      <p>Full privacy policy: <a href="https://eric-lam.com/APP/dreamcue_privacy.html">https://eric-lam.com/APP/dreamcue_privacy.html</a></p>
+
+      <h2 lang="zh-Hant">中文支援</h2>
+      <p lang="zh-Hant">需要協助的話，請寄信到 <a href="mailto:support@eric-lam.com?subject=DreamCue%20%E6%94%AF%E6%8F%B4">support@eric-lam.com</a>，並附上裝置型號、iOS 版本與遇到的狀況。</p>
+      <ul lang="zh-Hant">
+        <li><strong>聽不到深夜提示：</strong>iPhone 上的深夜提示是通知。請確認 DreamCue 的通知已開啟、側邊鈴聲開關不是靜音，且睡眠專注模式允許 DreamCue。改過睡眠時間後，請在「今晚」頁面再按一次「設定夜間提示」。</li>
+        <li><strong>被提示吵醒：</strong>在早晨紀錄中註記，DreamCue 會降低或暫停提示；也可以到「設定」重新試聽提示，選「太強」或「較弱」。</li>
+        <li><strong>練習被暫停：</strong>安全確認中只要有一項符合，DreamCue 就會改用只寫日記模式保護睡眠，夢境日記仍可照常使用。狀況改變時，可在「設定」修改回答。</li>
+        <li><strong>資料：</strong>夢境筆記只存在你的裝置上，可在「設定」匯出或刪除。</li>
+      </ul>
+      <p lang="zh-Hant">DreamCue 是練習工具，不是醫療器材，無法偵測夢境或 REM 睡眠，也不保證一定會做清明夢。若惡夢、睡不好，或分不清夢境與現實讓你困擾，請停止練習並諮詢專業醫療人員。</p>
+    </section>
+  </main>
+</body>
+</html>

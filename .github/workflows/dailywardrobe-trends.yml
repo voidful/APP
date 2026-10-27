@@ -1,0 +1,132 @@
+# Monthly trend update for DailyWardrobe's outfit score (https://eric-lam.com/APP/dailywardrobe_trends.json).
+# Maintained in the DailyWardrobe project (scripts/trends/) and copied here by scripts/trends/sync_site.py.
+#
+# research: Claude Code researches the next season in a scratch folder. It can edit only a copy of feed.json and run
+#           the checker, and this job holds no write token and no signing key.
+# publish:  re-checks the result itself, signs it with the TREND_SIGNING_KEY secret, commits it, and waits for Pages.
+#           Every run also commits last-run.json, which keeps this public repo's schedule from being paused for inactivity.
+#
+# Secrets: TREND_SIGNING_KEY (the P-256 private key in PEM), and CLAUDE_CODE_OAUTH_TOKEN (`claude setup-token`)
+#          or ANTHROPIC_API_KEY.
+name: DailyWardrobe trends
+
+on:
+  schedule:
+    - cron: '7 2 10 * *'  # the 10th of each month, 10:07 in Taipei
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Research and check only, without publishing
+        type: boolean
+        default: false
+
+concurrency:
+  group: dailywardrobe-trends
+  cancel-in-progress: false
+
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  TOOLS: .github/dailywardrobe-trends
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Research
+        env:
+          OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -n "$OAUTH_TOKEN" ]; then export CLAUDE_CODE_OAUTH_TOKEN="$OAUTH_TOKEN"
+          elif [ -n "$API_KEY" ]; then export ANTHROPIC_API_KEY="$API_KEY"
+          else echo "::error::Add the CLAUDE_CODE_OAUTH_TOKEN or ANTHROPIC_API_KEY secret"; exit 1; fi
+          unset OAUTH_TOKEN API_KEY
+          TOOL="$GITHUB_WORKSPACE/$TOOLS/publish.py"
+          WORK="$RUNNER_TEMP/trend-work"
+          mkdir -p "$WORK" && cp "$TOOLS/feed.json" "$WORK/feed.json"
+          CHECK="python3 $TOOL check feed.json --online"
+          LANGUAGES=$(python3 -c 'import json, sys; print(", ".join(json.load(open(sys.argv[1]))))' "$TOOLS/languages.json")
+          PROMPT=$(sed -e "s|{{TODAY}}|$(date -u +%Y-%m-%d)|" -e "s|{{CHECK}}|$CHECK|" -e "s|{{LANGUAGES}}|$LANGUAGES|" "$TOOLS/research.md")
+          cd "$WORK"
+          # --restricted keeps the file tools inside this folder; dontAsk denies anything not listed below.
+          claude -p "$PROMPT" --restricted --strict-mcp-config --no-session-persistence --permission-mode dontAsk \
+            --tools "Read,Edit,Write,WebSearch,WebFetch,Bash" \
+            --allowedTools "Read" "Edit" "Write" "WebSearch" "WebFetch" "Bash($CHECK)" \
+            --model opus --max-budget-usd 10 | tee "$RUNNER_TEMP/summary.md"
+          { echo "## Research"; cat "$RUNNER_TEMP/summary.md"; } >> "$GITHUB_STEP_SUMMARY"
+          python3 "$TOOL" check feed.json --online
+      - uses: actions/upload-artifact@v4
+        with:
+          name: feed
+          path: ${{ runner.temp }}/trend-work/feed.json
+          retention-days: 30
+
+  publish:
+    needs: research
+    if: ${{ !inputs.dry_run }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: feed
+          path: ${{ runner.temp }}/candidate
+      - name: Check and sign
+        env:
+          SIGNING_KEY: ${{ secrets.TREND_SIGNING_KEY }}
+        run: |
+          python3 "$TOOLS/publish.py" check "$RUNNER_TEMP/candidate/feed.json" --online
+          cp "$RUNNER_TEMP/candidate/feed.json" "$TOOLS/feed.json"
+          (umask 077 && printf '%s\n' "$SIGNING_KEY" > "$RUNNER_TEMP/key.pem")
+          TREND_SIGNING_KEY_FILE="$RUNNER_TEMP/key.pem" python3 "$TOOLS/publish.py" sign dailywardrobe_trends.json
+          rm -f "$RUNNER_TEMP/key.pem"
+      - name: Commit
+        id: commit
+        run: |
+          changed=$(git diff --quiet -- dailywardrobe_trends.json && echo false || echo true)
+          python3 - "$changed" > "$TOOLS/last-run.json" <<'PY'
+          import base64, datetime, json, os, sys
+          seasons = [s['id'] for s in json.loads(base64.b64decode(json.load(open('dailywardrobe_trends.json'))['payload']))['seasons']]
+          run = f"{os.environ['GITHUB_SERVER_URL']}/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+          print(json.dumps({'checked': datetime.date.today().isoformat(), 'published': sys.argv[1] == 'true', 'seasons': seasons, 'run': run}, indent=1))
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$TOOLS/feed.json" "$TOOLS/last-run.json" dailywardrobe_trends.json
+          if [ "$changed" = true ]; then message="DailyWardrobe trends: $(python3 -c 'import json; print(", ".join(json.load(open(".github/dailywardrobe-trends/last-run.json"))["seasons"]))')"
+          else message="DailyWardrobe trends: checked, no change"; fi
+          git commit --quiet -m "$message"
+          git pull --rebase --quiet && git push --quiet
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Wait for GitHub Pages
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ steps.commit.outputs.sha }}
+        run: |
+          for attempt in $(seq 1 40); do
+            build=$(gh api "repos/$GITHUB_REPOSITORY/pages/builds/latest" --jq '.status + " " + .commit')
+            if [ "$build" = "built $SHA" ]; then break; fi
+            if [ "$attempt" = 40 ]; then echo "::error::Pages did not build $SHA within 10 minutes (last: $build)"; exit 1; fi
+            sleep 15
+          done
+          # Cloudflare may turn away cloud runners, so the live check is a warning only.
+          python3 "$TOOLS/publish.py" verify || echo "::warning::Could not read the live file from this runner"

@@ -203,10 +203,9 @@
       <h2>Enable CodeIME</h2>
       <ol>
         <li>Install and open CodeIME.</li>
-        <li>Open Settings &gt; General &gt; Keyboard &gt; Keyboards.</li>
-        <li>Tap Add New Keyboard.</li>
-        <li>Select CodeIME.</li>
+        <li>Tap Open Settings, then Keyboards, and turn on CodeIME. You can also go to Settings &gt; General &gt; Keyboard &gt; Keyboards &gt; Add New Keyboard and select CodeIME.</li>
         <li>Open any text field and use the globe key to switch to CodeIME.</li>
+        <li>Use the Try It field in the CodeIME app to check what each key sends.</li>
       </ol>
     </section>
 
@@ -220,17 +219,42 @@
 
         <article>
           <h3>Are my keystrokes or commands sent to a server?</h3>
-          <p>No. CodeIME does not collect, store, or transmit keystrokes, commands, predictions, or usage data. Command predictions are local and rule-based.</p>
+          <p>No. CodeIME does not collect or transmit keystrokes, commands, predictions, or usage data. Predictions are generated on device, and the command history that ranks them stays inside the keyboard on your device.</p>
         </article>
 
         <article>
           <h3>How do terminal arrow keys work?</h3>
-          <p>CodeIME inserts common ANSI escape sequences for arrow keys. Terminal apps that accept those sequences can interpret them as navigation input.</p>
+          <p>CodeIME inserts common ANSI escape sequences for arrow keys. Terminal apps that accept those sequences can interpret them as navigation input. With Shift, Alt, or Ctrl active, arrows use xterm modifier sequences, such as ESC [1;5C for Ctrl-Right. The pgup and pgdn keys next to the arrows send Page Up (ESC [5~) and Page Down (ESC [6~) for less, man, vim, and tmux copy mode. Hold an arrow or page key to repeat it.</p>
         </article>
 
         <article>
           <h3>How do Ctrl and Alt work?</h3>
           <p>Tap Ctrl or Alt to make the next key use that modifier. You can also hold Ctrl while tapping another key, such as C, to insert the matching control character.</p>
+        </article>
+
+        <article>
+          <h3>How does Shift work?</h3>
+          <p>Tap Shift for one capital letter, double-tap it for caps lock, or hold it while typing. Shift is on the letter rows and in the NAV rail, so it also works with other keys: Shift plus Tab sends Shift-Tab (ESC [Z), and Shift plus an arrow sends a shifted arrow sequence. Caps lock only changes letters, so arrows and Tab stay plain while it is on.</p>
+        </article>
+
+        <article>
+          <h3>How does CodeIME learn my commands?</h3>
+          <p>When you press Return in a terminal or code editor, CodeIME saves the command inside the keyboard on your device and ranks it by how often and how recently you use it. Lines that look like passwords, tokens, or keys are never saved, and neither are lines that start with a space. Hold a prediction to pin it, forget it, or clear the history.</p>
+        </article>
+
+        <article>
+          <h3>Why did the Return key turn red?</h3>
+          <p>The command on the line is hard to undo, such as rm -rf on your home folder, a force push, kubectl delete, or DROP TABLE. A tap does not send it. Hold Return for a moment to run it anyway, or tap the safer version in the prediction row when one is offered, such as --force-with-lease.</p>
+        </article>
+
+        <article>
+          <h3>Why did the prediction row switch to vim or tmux keys?</h3>
+          <p>After you open vim, nano, less, man, htop, or tmux, the row shows that program's keys, such as :wq, ^O, q, or ^B c, and switches back when you quit. Tap the ✕ chip to switch back yourself.</p>
+        </article>
+
+        <article>
+          <h3>What do the small symbols on the letter keys do?</h3>
+          <p>Hold a letter to type the digit or symbol in its corner, such as 1 on q or $ on d, and slide to pick extras like &amp;&amp; or --. Symbol keys offer extras too, such as -&gt; and 2&gt;&amp;1. You can also drag along the space bar to move the cursor; in terminals, dragging up or down walks through shell history.</p>
         </article>
 
         <article>
@@ -246,6 +270,7 @@
         <li>If CodeIME does not appear in the keyboard list, open CodeIME once, then check Settings again.</li>
         <li>If the keyboard does not switch, try a different text field and use the globe key to cycle keyboards.</li>
         <li>If terminal navigation does not respond, confirm the target app accepts ANSI escape sequences from software keyboards.</li>
+        <li>In a new terminal session, type a character before dragging the space bar up or down, so CodeIME can tell the terminal apart from a document.</li>
         <li>If the layout looks unusual after an iOS update, restart the device and contact support with a screenshot.</li>
       </ul>
     </section>
@@ -253,7 +278,7 @@
     <section>
       <h2>Privacy</h2>
       <div class="note">
-        <p>CodeIME has no analytics, no ads, no tracking, no accounts, and no server-side prediction service.</p>
+        <p>CodeIME has no analytics, no ads, no tracking, no accounts, and no server-side prediction service. Your command history stays inside the keyboard on your device.</p>
       </div>
     </section>
 

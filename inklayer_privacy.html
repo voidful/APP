@@ -96,7 +96,7 @@
     <img src="inklayer_icon.png" alt="InkLayer">
     <h1>InkLayer Privacy Policy</h1>
     <nav class="language-links"><a href="inklayer_privacy_zh-TW.html" hreflang="zh-Hant">繁體中文</a></nav>
-    <p>Effective 20 October 2026. Publisher: voidful.</p>
+    <p>Effective 2 November 2026. Publisher: voidful.</p>
 
     <h2>Summary</h2>
     <p>InkLayer is a note-taking app for handwriting, PDFs and Markdown. Your notes stay on your device, in ordinary files you can also open with other apps. InkLayer has no account, no advertising, no analytics or tracking, and no crash-reporting service. The developer does not receive your notes, your files, or information about how you use the app.</p>
@@ -107,6 +107,7 @@
       <li>Copies of text you have not saved yet, so it can be recovered after a crash. They are deleted once the note is saved.</li>
       <li>Your settings, such as appearance, pen and e-ink preferences, and whether you bought InkLayer Lifetime.</li>
       <li>The WebDAV server address, user name and password you enter, kept in the system's secure storage (Keychain).</li>
+      <li>If you sign in with Google for Google Drive sync: the sign-in token that lets InkLayer reach your Google Drive (never your password), kept in the system's secure storage (Keychain).</li>
     </ul>
 
     <h2>Microphone</h2>
@@ -118,16 +119,27 @@
     <h2>When InkLayer uses the network</h2>
     <ul>
       <li><strong>WebDAV sync</strong>, if you set it up, sends your library files to the WebDAV server you chose, and only there. Whoever runs that server handles the data under their own policy.</li>
+      <li><strong>Google Drive sync</strong>, if you sign in with Google and choose to sync a library there, moves that library's files directly between your devices and your own Google Drive (My Drive › InkLayer). There is no InkLayer server in between. See "Google user data" below.</li>
       <li><strong>InkLayer Lifetime</strong> is bought through the App Store (or Google Play on Android). The store processes the payment; InkLayer never receives your payment details, name or email.</li>
       <li>Links you tap open in your browser.</li>
     </ul>
     <p>This version of InkLayer has no AI features and sends nothing to any AI service.</p>
 
+    <h2>Google user data</h2>
+    <p>When you sign in with Google, InkLayer asks for one permission: to see and manage the files InkLayer itself creates in your Google Drive (the <code>drive.file</code> scope). It cannot see or change any other file in your Drive.</p>
+    <ul>
+      <li><strong>What InkLayer accesses:</strong> the files of the libraries you choose to sync, in the InkLayer folder of your Google Drive, and your Google account's email address.</li>
+      <li><strong>How it is used:</strong> only to sync those libraries between your devices (creating, reading, updating and moving to the Drive trash their files) and to show which Google account a library syncs with.</li>
+      <li><strong>Where it goes:</strong> only between your device and Google. The developer never receives it. InkLayer does not sell Google user data, does not share or transfer it to anyone, does not use it for advertising, and does not use it to train AI or machine-learning models.</li>
+      <li><strong>Stopping:</strong> Settings › Sync › Google Drive › Sign Out removes the sign-in from the device and withdraws InkLayer's access; you can also remove it at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. The files stay in your Google Drive until you delete them there.</li>
+    </ul>
+    <p>InkLayer's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
     <h2>Sharing</h2>
     <p>InkLayer does not sell or share personal data and does not use your data for advertising or tracking.</p>
 
     <h2>Deleting your data</h2>
-    <p>Delete notes in the app, or delete the library folder. Deleting InkLayer removes the data stored inside the app; a library folder you chose outside the app, for example in iCloud Drive, stays until you delete it. Data on your WebDAV server is deleted on that server.</p>
+    <p>Delete notes in the app, or delete the library folder. Deleting InkLayer removes the data stored inside the app; a library folder you chose outside the app, for example in iCloud Drive, stays until you delete it. Data on your WebDAV server is deleted on that server, and libraries synced with Google Drive are deleted in your Google Drive.</p>
 
     <h2>Changes</h2>
     <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>

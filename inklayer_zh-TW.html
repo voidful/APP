@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#243B35">
+  <meta name="description" content="InkLayer：手寫、PDF 與 Markdown 筆記在同一張畫布上，存成屬於你的檔案。">
+  <title>InkLayer</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #f4f6f1;
+      --surface: #ffffff;
+      --text: #202521;
+      --muted: #5d6860;
+      --accent: #2f7558;
+      --border: #9aa49b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0b1115;
+        --surface: #111a1f;
+        --text: #f4f6f1;
+        --muted: #b3bdb4;
+        --accent: #69c49b;
+        --border: #435049;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 32px 20px;
+    }
+
+    main {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 0 auto;
+      max-width: 860px;
+      padding: 28px;
+    }
+
+    img {
+      border-radius: 8px;
+      height: 56px;
+      width: 56px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 18px 0 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 28px 0 10px;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .notice {
+      border-left: 4px solid var(--accent);
+      margin: 22px 0;
+      padding: 10px 14px;
+    }
+
+    .language-links {
+      display: flex;
+      gap: 14px;
+      margin: 18px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="inklayer_icon.png" alt="InkLayer">
+    <h1>InkLayer</h1>
+    <nav class="language-links"><a href="inklayer.html" hreflang="en">English</a></nav>
+    <p>InkLayer 是一款筆記 App，把手寫、PDF 與 Markdown 筆記放在同一張畫布上，存成屬於你自己的檔案。</p>
+
+    <h2>功能</h2>
+    <ul>
+      <li><strong>在 PDF 上手寫</strong>：用 Apple Pencil 或觸控筆書寫，手寫存在 PDF 旁邊，原始檔案不會被修改。</li>
+      <li><strong>Markdown 筆記</strong>：筆記之間可以互相連結，有反向連結與關聯圖。</li>
+      <li><strong>圖層</strong>：PDF、打字、手寫與圖片各自分開，可以個別顯示、隱藏或匯出。</li>
+      <li><strong>畫布</strong>：頁面、卡片、錄音與流程圖並排整理。</li>
+      <li><strong>你的檔案，用你的方式同步</strong>：筆記庫就是一般的 Markdown 與 PDF 資料夾。可以放在 iCloud 雲碟、透過你自己的 Google 雲端硬碟同步，或使用你選擇的 WebDAV 伺服器。InkLayer 沒有帳號，也沒有自己的伺服器。</li>
+    </ul>
+
+    <h2>下載 InkLayer</h2>
+    <p><a href="https://apps.apple.com/app/id6824608659">App Store 上的 InkLayer</a>，支援 iPhone、iPad 與 Mac。</p>
+
+    <p class="notice"><a href="inklayer_privacy_zh-TW.html">隱私權政策</a> · <a href="inklayer_support_zh-TW.html">支援</a> · InkLayer · voidful</p>
+  </main>
+</body>
+</html>

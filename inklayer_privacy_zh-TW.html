@@ -96,7 +96,7 @@
     <img src="inklayer_icon.png" alt="InkLayer">
     <h1>InkLayer 隱私權政策</h1>
     <nav class="language-links"><a href="inklayer_privacy.html" hreflang="en">English</a></nav>
-    <p>生效日期：2026 年 10 月 20 日。發行者：voidful。</p>
+    <p>生效日期：2026 年 11 月 2 日。發行者：voidful。</p>
 
     <h2>摘要</h2>
     <p>InkLayer 是結合手寫、PDF 與 Markdown 的筆記 App。你的筆記留在你的裝置上，存成其他 App 也能開啟的一般檔案。InkLayer 沒有帳號、沒有廣告、沒有分析或追蹤，也沒有當機回報服務。開發者不會收到你的筆記、檔案，也不會收到你使用 App 的情形。</p>
@@ -107,6 +107,7 @@
       <li>尚未儲存的文字副本，讓 App 當機後能救回。筆記存檔後就會刪除。</li>
       <li>你的設定，例如外觀、筆與電子紙偏好，以及是否已購買終身版。</li>
       <li>你輸入的 WebDAV 伺服器位址、帳號與密碼，存在系統的安全儲存區（鑰匙圈）。</li>
+      <li>如果你為了 Google 雲端硬碟同步而登入 Google：讓 InkLayer 存取你 Google 雲端硬碟的登入權杖（不是你的密碼），存在系統的安全儲存區（鑰匙圈）。</li>
     </ul>
 
     <h2>麥克風</h2>
@@ -118,16 +119,27 @@
     <h2>InkLayer 何時會連網</h2>
     <ul>
       <li><strong>WebDAV 同步</strong>：如果你設定了，會把筆記庫檔案傳到你指定的 WebDAV 伺服器，也只傳到那裡。資料由該伺服器的管理者依其政策處理。</li>
+      <li><strong>Google 雲端硬碟同步</strong>：如果你登入 Google 並選擇用它同步某個筆記庫，該筆記庫的檔案會直接在你的裝置與你自己的 Google 雲端硬碟（我的雲端硬碟 › InkLayer）之間傳送，中間沒有 InkLayer 的伺服器。詳見下方「Google 使用者資料」。</li>
       <li><strong>InkLayer 終身版</strong>透過 App Store（Android 為 Google Play）購買，付款由商店處理，InkLayer 不會收到你的付款資料、姓名或 email。</li>
       <li>你點的連結會用瀏覽器開啟。</li>
     </ul>
     <p>這個版本的 InkLayer 沒有 AI 功能，不會傳送任何內容給 AI 服務。</p>
 
+    <h2>Google 使用者資料</h2>
+    <p>當你登入 Google 時，InkLayer 只要求一項權限：查看與管理 InkLayer 自己在你 Google 雲端硬碟中建立的檔案（<code>drive.file</code> 權限範圍）。它看不到、也無法更動你雲端硬碟裡的其他任何檔案。</p>
+    <ul>
+      <li><strong>InkLayer 存取的資料：</strong>你選擇同步的筆記庫檔案（位於你 Google 雲端硬碟的 InkLayer 資料夾），以及你 Google 帳號的 email 地址。</li>
+      <li><strong>用途：</strong>只用來在你的裝置之間同步這些筆記庫（建立、讀取、更新其檔案，或移到雲端硬碟的垃圾桶），以及顯示筆記庫和哪個 Google 帳號同步。</li>
+      <li><strong>資料去向：</strong>只在你的裝置與 Google 之間傳送，開發者不會收到。InkLayer 不販售 Google 使用者資料，不分享或轉移給任何人，不用於廣告，也不用於訓練 AI 或機器學習模型。</li>
+      <li><strong>停止使用：</strong>在「設定 › 同步 › Google 雲端硬碟 › 登出」會移除裝置上的登入並撤銷 InkLayer 的存取權；也可以在 <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> 移除。檔案會留在你的 Google 雲端硬碟，直到你在那裡刪除。</li>
+    </ul>
+    <p>InkLayer 對於從 Google API 取得之資訊的使用與轉移，遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服務使用者資料政策</a>，包括「有限使用」規定。</p>
+
     <h2>分享</h2>
     <p>InkLayer 不販售、不分享個人資料，也不會把你的資料用於廣告或追蹤。</p>
 
     <h2>刪除資料</h2>
-    <p>你可以在 App 裡刪除筆記，或刪除筆記庫資料夾。刪除 InkLayer 會移除存在 App 內的資料；你選擇放在 App 以外的筆記庫資料夾（例如 iCloud 雲碟）會保留，直到你自己刪除。WebDAV 伺服器上的資料請在該伺服器刪除。</p>
+    <p>你可以在 App 裡刪除筆記，或刪除筆記庫資料夾。刪除 InkLayer 會移除存在 App 內的資料；你選擇放在 App 以外的筆記庫資料夾（例如 iCloud 雲碟）會保留，直到你自己刪除。WebDAV 伺服器上的資料請在該伺服器刪除；用 Google 雲端硬碟同步的筆記庫請在你的 Google 雲端硬碟刪除。</p>
 
     <h2>政策變更</h2>
     <p>如果本政策有所變更，新版本會公布在這個頁面，並更新生效日期。</p>

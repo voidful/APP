@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#243B35">
+  <meta name="description" content="InkLayer: handwriting, PDFs and Markdown notes on one canvas, in files you own.">
+  <title>InkLayer</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #f4f6f1;
+      --surface: #ffffff;
+      --text: #202521;
+      --muted: #5d6860;
+      --accent: #2f7558;
+      --border: #9aa49b;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0b1115;
+        --surface: #111a1f;
+        --text: #f4f6f1;
+        --muted: #b3bdb4;
+        --accent: #69c49b;
+        --border: #435049;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 32px 20px;
+    }
+
+    main {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin: 0 auto;
+      max-width: 860px;
+      padding: 28px;
+    }
+
+    img {
+      border-radius: 8px;
+      height: 56px;
+      width: 56px;
+    }
+
+    h1 {
+      font-size: 32px;
+      line-height: 1.15;
+      margin: 18px 0 8px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin: 28px 0 10px;
+    }
+
+    p,
+    li {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .notice {
+      border-left: 4px solid var(--accent);
+      margin: 22px 0;
+      padding: 10px 14px;
+    }
+
+    .language-links {
+      display: flex;
+      gap: 14px;
+      margin: 18px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="inklayer_icon.png" alt="InkLayer">
+    <h1>InkLayer</h1>
+    <nav class="language-links"><a href="inklayer_zh-TW.html" hreflang="zh-Hant">繁體中文</a></nav>
+    <p>InkLayer is a note-taking app that puts handwriting, PDFs and Markdown notes on one canvas, in files you own.</p>
+
+    <h2>What it does</h2>
+    <ul>
+      <li><strong>Write on PDFs</strong> with Apple Pencil or a stylus. Your handwriting is kept beside the PDF; the original file is never changed.</li>
+      <li><strong>Markdown notes</strong> with links between notes, backlinks and a graph of how they connect.</li>
+      <li><strong>Layers</strong>: the PDF, typed text, handwriting and images stay separate, so each can be shown, hidden or exported on its own.</li>
+      <li><strong>Canvases</strong> for pages, cards, recordings and flowcharts side by side.</li>
+      <li><strong>Your files, synced your way</strong>: a library is an ordinary folder of Markdown and PDF files. Keep it in iCloud Drive, sync it through your own Google Drive, or use a WebDAV server you choose. InkLayer has no account and no server of its own.</li>
+    </ul>
+
+    <h2>Get InkLayer</h2>
+    <p><a href="https://apps.apple.com/app/id6824608659">InkLayer on the App Store</a> for iPhone, iPad and Mac.</p>
+
+    <p class="notice"><a href="inklayer_privacy.html">Privacy Policy</a> · <a href="inklayer_support.html">Support</a> · InkLayer · voidful</p>
+  </main>
+</body>
+</html>

@@ -137,18 +137,19 @@
     <header>
       <div class="eyebrow">Privacy Policy</div>
       <h1>CodeIME Privacy Policy</h1>
-      <p class="updated">Effective date: October 29, 2026</p>
-      <p class="summary">CodeIME is an iOS developer keyboard designed for typing commands, symbols, and remote development shortcuts. CodeIME is built to work locally and privately.</p>
+      <p class="updated">Effective date: November 17, 2026</p>
+      <p class="summary">CodeIME is an iOS developer keyboard and an SSH workspace for your own servers. The keyboard works entirely on your device. SSH Dev connects only to the servers you set up, and what you do there stays between your device and those servers.</p>
     </header>
 
     <section class="highlight">
-      <p>CodeIME does not collect personal data, does not track users, and does not require keyboard Full Access.</p>
+      <p>CodeIME does not collect personal data, does not track users, has no accounts or analytics, and the keyboard does not require Full Access.</p>
     </section>
 
     <section>
       <h2>Data Collection</h2>
-      <p>CodeIME does not collect, transmit, sell, or share personal data.</p>
+      <p>The developer of CodeIME does not collect, sell, or share personal data.</p>
       <p>The keyboard extension does not send keystrokes, commands, prediction text, typed content, or usage data to any server.</p>
+      <p>The CodeIME app talks to the network only for the things described below: connecting to your servers, delivering notifications you turn on, and App Store purchases.</p>
     </section>
 
     <section>
@@ -156,6 +157,25 @@
       <p>To rank its predictions, the keyboard keeps a history of the commands you run in terminals and code editors. This history is saved only inside the keyboard on your device. It is never sent anywhere and is not shared with the CodeIME app.</p>
       <p>Lines that look like passwords, tokens, or keys are not saved, and neither are lines that start with a space. Chat and note fields that use autocorrection are never recorded.</p>
       <p>You can pin, forget, or clear saved commands by holding a prediction. Deleting CodeIME removes the history.</p>
+      <p>SSH Dev keeps your imported ssh_config, your host settings and saved commands, known host keys, and recent agent task conversations on your device. SSH keys created in the app are generated on the device and kept in the iOS Keychain or the Secure Enclave. Passwords you type to sign in or to install a key are used for that sign-in and are not saved.</p>
+    </section>
+
+    <section>
+      <h2>Connections to Your Servers</h2>
+      <p>SSH Dev connects directly from your device to the servers in your configuration, through the jump hosts you configure, or through Cloudflare Access when a server uses it. Terminal sessions, port forwarding, and agent tasks travel only between your device and your servers. They do not pass through servers run by the developer of CodeIME.</p>
+      <p>When you set up Agent Tasks on a host, CodeIME installs a small helper in <code>~/.codeime</code> on that server. It reads the Claude Code and Codex sessions there and sends them to the app over your SSH connection.</p>
+      <p>Cloudflare Access sign-in happens in a web view with your organization's Cloudflare Access, under Cloudflare's privacy policy. The resulting sign-in token is kept in the Keychain on your device.</p>
+    </section>
+
+    <section>
+      <h2>Notifications</h2>
+      <p>If you turn on task notifications, your device's push token is given to the helper on the servers you choose and to the CodeIME push relay, which forwards notifications to the Apple Push Notification service. The relay does not store push tokens or notification content.</p>
+      <p>A notification from your server carries only random identifiers and the kind of event. Host names and task titles are filled in on your device, so neither the relay nor Apple sees them. Turning notifications off removes your device from those servers.</p>
+    </section>
+
+    <section>
+      <h2>Purchases</h2>
+      <p>SSH Dev subscriptions and the lifetime purchase are processed by Apple. CodeIME does not receive your payment information; whether SSH Dev is unlocked is checked on your device.</p>
     </section>
 
     <section>
@@ -165,7 +185,7 @@
 
     <section>
       <h2>Command Predictions</h2>
-      <p>CodeIME predictions are generated on device from the current command fragment, built-in command patterns, and the on-device command history described above.</p>
+      <p>CodeIME predictions are generated on device from the current command fragment, built-in command patterns, and the on-device command history described above. In the CodeIME app's own terminal, paths and branch names can also be completed from your server over your SSH connection.</p>
     </section>
 
     <section>
@@ -180,7 +200,7 @@
 
     <section>
       <h2>Third-Party Services</h2>
-      <p>CodeIME does not include third-party analytics SDKs, advertising SDKs, or tracking SDKs.</p>
+      <p>CodeIME does not include third-party analytics SDKs, advertising SDKs, or tracking SDKs. It uses Apple's services for purchases and push notifications, and the push relay runs on Cloudflare Workers.</p>
     </section>
 
     <section>

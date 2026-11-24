@@ -137,8 +137,8 @@
     <header>
       <div class="eyebrow">Privacy Policy</div>
       <h1>CodeIME Privacy Policy</h1>
-      <p class="updated">Effective date: November 17, 2026</p>
-      <p class="summary">CodeIME is an iOS developer keyboard and an SSH workspace for your own servers. The keyboard works entirely on your device. SSH Dev connects only to the servers you set up, and what you do there stays between your device and those servers.</p>
+      <p class="updated">Effective date: November 24, 2026</p>
+      <p class="summary">CodeIME is a developer keyboard for iPhone and iPad and an SSH workspace for your own servers, on iPhone, iPad, and Mac. The keyboard works entirely on your device. SSH Dev connects only to the servers you set up, and what you do there stays between your device and those servers.</p>
     </header>
 
     <section class="highlight">
@@ -149,7 +149,7 @@
       <h2>Data Collection</h2>
       <p>The developer of CodeIME does not collect, sell, or share personal data.</p>
       <p>The keyboard extension does not send keystrokes, commands, prediction text, typed content, or usage data to any server.</p>
-      <p>The CodeIME app talks to the network only for the things described below: connecting to your servers, delivering notifications you turn on, and App Store purchases.</p>
+      <p>The CodeIME app talks to the network only for the things described below: connecting to your servers, syncing with your iCloud account, delivering notifications you turn on, and App Store purchases.</p>
     </section>
 
     <section>
@@ -165,6 +165,12 @@
       <p>SSH Dev connects directly from your device to the servers in your configuration, through the jump hosts you configure, or through Cloudflare Access when a server uses it. Terminal sessions, port forwarding, and agent tasks travel only between your device and your servers. They do not pass through servers run by the developer of CodeIME.</p>
       <p>When you set up Agent Tasks on a host, CodeIME installs a small helper in <code>~/.codeime</code> on that server. It reads the Claude Code and Codex sessions there and sends them to the app over your SSH connection.</p>
       <p>Cloudflare Access sign-in happens in a web view with your organization's Cloudflare Access, under Cloudflare's privacy policy. The resulting sign-in token is kept in the Keychain on your device.</p>
+    </section>
+
+    <section>
+      <h2>iCloud Sync</h2>
+      <p>If you leave Sync with iCloud on (Settings › iCloud), your host list (the imported ssh_config, host settings, and saved commands), the server host keys you trusted, and the terminal theme are kept in your own iCloud account, so CodeIME on your iPhone, iPad, and Mac shows the same hosts. This uses Apple's iCloud key-value storage; the developer of CodeIME cannot read it.</p>
+      <p>SSH keys, passwords, Cloudflare Access sign-ins, agent task history, and push tokens are never synced. Each device keeps its own SSH key. Turning sync off stops sending changes. To delete the copy kept in iCloud, turn sync off on every device, then tap Remove from iCloud in the same place.</p>
     </section>
 
     <section>

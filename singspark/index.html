@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SingSpark: Karaoke & live pitch coach</title>
+  <meta name="description" content="Private singing practice on iPhone and iPad: karaoke with vocal removal and key change, a live pitch line, a voice range test, a Vocal Academy in 3D, vocal drills, instruments with chord charts, stage mode and cover videos. No ads, no account.">
+  <meta name="apple-itunes-app" content="app-id=6767637172">
+  <meta property="og:title" content="SingSpark: Karaoke & live pitch coach">
+  <meta property="og:description" content="Sing in tune with a live pitch line, karaoke, a voice range test, a Vocal Academy in 3D, vocal drills, chord charts, stage mode and cover videos. No ads, no account.">
+  <meta property="og:image" content="assets/en-02.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090b12;
+      --panel: rgba(255, 255, 255, 0.08);
+      --text: #f7f8ff;
+      --muted: #b8bdcc;
+      --accent: #32dacb;
+      --violet: #a87dff;
+      --warm: #ffb94c;
+      --line: rgba(255, 255, 255, 0.14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(50, 218, 203, 0.22), transparent 32rem),
+        radial-gradient(circle at 80% 40%, rgba(168, 125, 255, 0.16), transparent 30rem),
+        radial-gradient(circle at bottom right, rgba(255, 185, 76, 0.18), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    main { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0 72px; }
+    nav { display: flex; justify-content: flex-end; gap: 8px; }
+    nav button {
+      border: 1px solid var(--line); background: var(--panel); color: var(--muted);
+      border-radius: 999px; padding: 6px 14px; font: inherit; cursor: pointer;
+    }
+    nav button[aria-pressed="true"] { color: #071012; background: var(--accent); border-color: var(--accent); }
+    .hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 32px; align-items: center; margin-top: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .brand img { width: 64px; height: 64px; border-radius: 15px; }
+    .brand span { font-weight: 800; font-size: 22px; }
+    h1 { margin: 0 0 14px; font-size: clamp(36px, 6vw, 60px); line-height: 1.08; }
+    h2 { margin: 56px 0 16px; font-size: clamp(26px, 4vw, 34px); line-height: 1.2; }
+    h3 { margin: 0 0 6px; font-size: 19px; line-height: 1.25; }
+    p, li { color: var(--muted); }
+    .lead { font-size: 19px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 26px; padding: 0; list-style: none; }
+    .pills li { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 4px 12px; color: var(--text); font-size: 14px; }
+    .button {
+      display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 22px;
+      border-radius: 999px; background: var(--accent); color: #071012; font-weight: 800; text-decoration: none;
+    }
+    .shots { display: flex; gap: 14px; justify-content: center; }
+    .shots img { width: 46%; border-radius: 22px; box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45); }
+    .shots img:nth-child(2) { transform: translateY(36px); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+    .tile { border: 1px solid var(--line); background: var(--panel); border-radius: 22px; padding: 22px; backdrop-filter: blur(24px); }
+    .tile .icon { font-size: 26px; }
+    .new { color: var(--warm); font-weight: 800; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .plans ul { padding-left: 20px; margin: 8px 0 0; }
+    footer { margin-top: 64px; display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font-size: 14px; }
+    a { color: var(--accent); }
+    [data-lang] { display: none; }
+    html[lang="en"] [data-lang="en"], html[lang="zh-Hant"] [data-lang="zh-Hant"] { display: revert; }
+    html[lang="en"] .pills[data-lang="en"], html[lang="zh-Hant"] .pills[data-lang="zh-Hant"] { display: flex; }
+    @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: no-preference) {
+      .shots img { transition: transform 0.6s ease; }
+      .shots:hover img:first-child { transform: translateY(-8px) rotate(-1deg); }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <nav aria-label="Language">
+    <button type="button" data-set-lang="zh-Hant">繁體中文</button>
+    <button type="button" data-set-lang="en">English</button>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <div class="brand"><img src="assets/icon.png" alt=""><span>SingSpark</span></div>
+      <h1 data-lang="en">Sing in tune, and see it happen.</h1>
+      <h1 data-lang="zh-Hant">唱得準不準，現在就看得見。</h1>
+      <p class="lead" data-lang="en">A private singing coach for iPhone and iPad. Karaoke with your own songs and a live pitch line, a voice range test and vocal drills, then play, perform and film your covers.</p>
+      <p class="lead" data-lang="zh-Hant">iPhone 與 iPad 上的私人練唱教練。用自己的歌唱 KTV、看即時音高線、測出你的音域、做發聲訓練，還能彈唱、上台表演、拍翻唱影片。</p>
+      <ul class="pills" data-lang="en"><li>No ads</li><li>No account</li><li>Recordings stay on your device</li><li>45 languages</li></ul>
+      <ul class="pills" data-lang="zh-Hant"><li>無廣告</li><li>無帳號</li><li>錄音只存在你的裝置</li><li>45 種語言</li></ul>
+      <a class="button" href="https://apps.apple.com/app/id6767637172">
+        <span data-lang="en">Download on the App Store</span><span data-lang="zh-Hant">在 App Store 下載</span>
+      </a>
+    </div>
+    <div class="shots">
+      <img data-lang="en" src="assets/en-02.jpg" alt="Karaoke with key change">
+      <img data-lang="en" src="assets/en-07.jpg" alt="Perform hands-free">
+      <img data-lang="zh-Hant" src="assets/zh-Hant-02.jpg" alt="KTV 升降 Key，消除原唱">
+      <img data-lang="zh-Hant" src="assets/zh-Hant-07.jpg" alt="上台表演，雙手不離琴">
+    </div>
+  </section>
+
+  <h2 data-lang="en">Everything you need to practice</h2>
+  <h2 data-lang="zh-Hant">練唱需要的，都在這裡</h2>
+  <div class="grid">
+    <div class="tile"><div class="icon">🎤</div>
+      <h3 data-lang="en">Karaoke with your songs</h3><h3 data-lang="zh-Hant">用自己的歌唱 KTV</h3>
+      <p data-lang="en">Import a song, remove the vocals, change the key or speed and follow the original pitch line.</p>
+      <p data-lang="zh-Hant">匯入歌曲，消除原唱、升降 Key 或變速，跟著原唱音高線唱。</p></div>
+    <div class="tile"><div class="icon">🎧</div>
+      <h3 data-lang="en">Sing with your music app</h3><h3 data-lang="zh-Hant">邊聽歌邊唱</h3>
+      <p data-lang="en">Play songs in Spotify, YouTube or any app while SingSpark shows how in tune you are.</p>
+      <p data-lang="zh-Hant">用 Spotify、YouTube 等 App 放歌，SingSpark 即時看你唱得準不準。</p></div>
+    <div class="tile"><div class="icon">🎯</div>
+      <h3 data-lang="en">My Voice</h3><h3 data-lang="zh-Hant">我的聲音</h3>
+      <p data-lang="en">A 40-second test maps your range, suggests keys that fit, marks your comfort zone and finds pop songs for your voice.</p>
+      <p data-lang="zh-Hant">唱 40 秒測出音域，推薦適合你的 Key、標出舒適區，並找出適合你的流行歌。</p></div>
+    <div class="tile"><div class="new" data-lang="en">New in 3.6</div><div class="new" data-lang="zh-Hant">3.6 新功能</div>
+      <h3 data-lang="en">Vocal Academy in 3D</h3><h3 data-lang="zh-Hant">聲樂學院，3D 看懂發聲</h3>
+      <p data-lang="en">12 lessons in 6 worlds: breath support, vocal fold closure, a relaxed larynx, mixing registers, resonance and vibrato. Each one explains the idea in plain words with a 3D model built from real anatomy and the research behind it, then you practice with live meters.</p>
+      <p data-lang="zh-Hant">6 大世界、12 關：呼吸支撐、聲帶閉合、放鬆喉頭、換聲區混聲、共鳴與抖音。每一課先用白話講原理，搭配用真實人體模型做的 3D 與背後的研究，再跟著即時儀表練習。</p></div>
+    <div class="tile"><div class="icon">🎸</div>
+      <h3 data-lang="en">Instruments and stage mode</h3><h3 data-lang="zh-Hant">彈唱與舞台模式</h3>
+      <p data-lang="en">A tuner, automatic chord charts, accompaniment with drums and bass, and setlists on big charts that turn with a Bluetooth pedal or follow your singing.</p>
+      <p data-lang="zh-Hant">調音器、自動和弦譜、加上鼓與貝斯的自動伴奏，還有歌單與大字和弦譜，用藍牙踏板或跟著歌聲翻頁。</p></div>
+    <div class="tile"><div class="icon">🎬</div>
+      <h3 data-lang="en">Cover videos</h3><h3 data-lang="zh-Hant">翻唱影片</h3>
+      <p data-lang="en">Sing to the camera with rolling lyrics and the pitch line, and end on your score and the song's difficulty.</p>
+      <p data-lang="zh-Hant">鏡頭前跟著提詞歌詞唱，可加上音準線與特效，結尾秀出評分與歌曲難度。</p></div>
+    <div class="tile"><div class="icon">🎵</div>
+      <h3 data-lang="en">Vocal Drills that stick</h3><h3 data-lang="zh-Hant">練到真的會的發聲訓練</h3>
+      <p data-lang="en">Start with 8 beginner lessons; the marker locks on when you're in tune and each round ends from memory.</p>
+      <p data-lang="zh-Hant">從 8 堂新手起步開始；唱準時指標鎖定，每輪最後憑記憶唱。</p></div>
+    <div class="tile"><div class="icon">📊</div>
+      <h3 data-lang="en">A strict coach for every take</h3><h3 data-lang="zh-Hant">每段錄音都有嚴格教練</h3>
+      <p data-lang="en">Pitch, stability, timing and section scores, with the phrases worth practicing next.</p>
+      <p data-lang="zh-Hant">音準、穩定、節奏與段落評分，告訴你下一句該練什麼。</p></div>
+    <div class="tile"><div class="icon">🔈</div>
+      <h3 data-lang="en">Hear yourself clearly</h3><h3 data-lang="zh-Hant">聽清楚自己的聲音</h3>
+      <p data-lang="en">Low-latency monitoring with the iPhone, wired, USB or Bluetooth mic. Plug in wired headphones and their mic is used automatically.</p>
+      <p data-lang="zh-Hant">手機、有線、USB 或藍牙麥克風都能低延遲監聽；插上有線耳機自動改用耳機麥克風。</p></div>
+  </div>
+
+  <h2 data-lang="en">Built on how singing is learned</h2>
+  <h2 data-lang="zh-Hant">依照研究設計的練習方式</h2>
+  <p data-lang="en">Real-time pitch feedback helps people sing in tune, but leaning on it too much hides what you have really learned. So SingSpark only corrects you when you leave the target band, ends every drill round with the guide hidden, and suggests when to move up or down a level.</p>
+  <p data-lang="zh-Hant">即時音高回饋能幫助唱準，但太依賴它會看不出你真正學會了多少。所以 SingSpark 只在你離開目標範圍時提示修正、每輪最後把線藏起來憑記憶唱，並建議何時升降難度。</p>
+
+  <h2 data-lang="en">Free, Pro and Pro Academy</h2>
+  <h2 data-lang="zh-Hant">免費、Pro 與 Pro 學院</h2>
+  <div class="plans">
+    <div class="tile">
+      <h3 data-lang="en">Free</h3><h3 data-lang="zh-Hant">免費</h3>
+      <p data-lang="en">Every Pro feature is free for the first 3 days. After that you keep both singing modes, the live pitch line, 5 saved recordings, section loop, sync calibration and pop songs for your voice, plus one vocal drill, song analysis, coach review and song range check a day. World 1 of the Vocal Academy and every lesson's explanation and 3D are free too.</p>
+      <p data-lang="zh-Hant">前 3 天可以免費使用所有 Pro 功能。之後仍可使用兩種唱法、即時音高線、保存 5 段錄音、段落循環、同步校準與適合你的流行歌推薦，並每天各試用 1 次發聲訓練、歌曲分析、教練分析與單曲音域查詢。聲樂學院的世界 1，以及每一課的說明與 3D，也都免費。</p>
+    </div>
+    <div class="tile">
+      <h3 data-lang="en">Pro: 1 month, 3 months or lifetime</h3><h3 data-lang="zh-Hant">Pro：月訂、3 個月或一次買斷</h3>
+      <p data-lang="en">Key and speed change, vocal removal, unlimited recordings, drills and analysis, range checks for any song, coach-style polish and export, full setlists with hands-free page turns, drums and bass, and full-length cover videos. Subscriptions renew automatically and can be canceled anytime in your App Store account settings.</p>
+      <p data-lang="zh-Hant">升降 Key 與變速、消除原唱、無限錄音、無限發聲訓練與分析、查任何一首歌的音域、教練式後製與匯出分享、完整歌單與免手翻頁、鼓與貝斯伴奏，以及完整長度的翻唱影片。訂閱會自動續訂，可隨時在 App Store 帳號設定中取消。</p>
+    </div>
+    <div class="tile">
+      <h3 data-lang="en">Pro Academy: monthly or yearly</h3><h3 data-lang="zh-Hant">Pro 學院：按月或按年訂閱</h3>
+      <p data-lang="en">Everything in Pro plus the full Vocal Academy. The yearly plan starts with a free week. The Academy has no lifetime option; if you own Pro Lifetime you can add the Academy on its own. Subscriptions renew automatically and can be canceled anytime in your App Store account settings.</p>
+      <p data-lang="zh-Hant">Pro 的全部功能，再加上完整的聲樂學院。年訂閱首週免費。學院沒有永久版；已經擁有 Pro 永久版的人，可以只加購學院。訂閱會自動續訂，可隨時在 App Store 帳號設定中取消。</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Voidful</span>
+    <a href="https://eric-lam.com/APP/singspark_support.html"><span data-lang="en">Support</span><span data-lang="zh-Hant">支援</span></a>
+    <a href="https://eric-lam.com/APP/singspark_privacy.html"><span data-lang="en">Privacy</span><span data-lang="zh-Hant">隱私權政策</span></a>
+    <span data-lang="en">SingSpark doesn't read audio from Spotify, Apple Music or other apps; it analyzes your microphone.</span>
+    <span data-lang="zh-Hant">SingSpark 不會讀取 Spotify、Apple Music 等 App 的音訊，只分析你的麥克風。</span>
+  </footer>
+</main>
+<script>
+  const pick = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-set-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.setLang === lang)));
+  };
+  const saved = localStorage.getItem("singspark-lang");
+  pick(saved || (navigator.language.toLowerCase().startsWith("zh") ? "zh-Hant" : "en"));
+  document.querySelectorAll("[data-set-lang]").forEach((b) => b.addEventListener("click", () => {
+    localStorage.setItem("singspark-lang", b.dataset.setLang);
+    pick(b.dataset.setLang);
+  }));
+</script>
+</body>
+</html>
